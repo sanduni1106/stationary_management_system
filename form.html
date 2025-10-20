@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="si">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>දකුණු පළාත් ක්‍රීඩා, යෞවන කටයුතු, ග්‍රාම සංවර්ධන අමාත්‍යංශය
+        Department of Sports, Southern Province Dakshinapaya.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Sinhala&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    <style>
+        /* General Body and Layout */
+        body {
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            background: url('assest/bg.jpg') center/cover no-repeat fixed;
+            justify-content: flex-start;
+            /* Align items from the top */
+            align-items: center;
+            /* Center the items horizontally */
+        }
+
+        p {
+            margin: 1em 0;
+            font-size: 2em;
+            color: #333;
+            text-align: center;
+        }
+
+       /* Header */
+header {
+    background-color: rgba(79, 8, 114, 0.37); /* Fixed transparency */
+    color: white;
+    padding: 45px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+
+    position: sticky;
+            top: 0;
+            /* Keeps the header at the top */
+            z-index: 1000;
+            
+            justify-content: center;
+            /* Centers the header content horizontally */
+            flex-direction: column;
+            align-items: center;
+            height: 100px;
+            
+            box-shadow: 0 4px 8px rgba(96, 94, 94, 0.1);
+            margin-bottom: 30px;
+
+
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    background: rgba(102, 51, 153, 0.77);
+}
+
+nav ul li {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s; /* Smooth hover effect */
+}
+
+nav ul li a:hover {
+    background-color: rgba(75, 0, 130, 0.9);
+    transform: scale(1.05);
+}
+
+        /* Mobile Responsive Adjustments */
+        @media (max-width: 768px) {
+            .header-title {
+                height: 40px;
+                /* Smaller logo size on mobile */
+            }
+        }
+
+        /* Button group container */
+        .button-group {
+            display: flex;
+            justify-content: center;
+            /* Center the buttons horizontally */
+            align-items: center;
+            /* Align the buttons vertically */
+            gap: 15px;
+            /* Space between the buttons */
+        }
+
+        /* Individual button styles */
+        .action-button {
+            background: transparent;
+            color: rgb(255, 255, 255);
+            border: none;
+            padding: 8px 16px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+
+        }
+
+        /* Action button hover effects */
+        .action-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .action-button:active {
+            transform: scale(0.95);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Image/icon inside the button */
+        .button-icon {
+            width: 30px;
+            /* Adjust the size of the icon */
+            height: 30px;
+            /* Adjust the size of the icon */
+            vertical-align: middle;
+            /* Aligns the icon vertically with the text */
+            margin-left: 5px;
+            /* Space between the icon and text */
+        }
+
+        /* Optional: If you want to increase size on hover for the icon */
+        .action-button:hover .button-icon {
+            width: 20px;
+            /* Icon size increase on hover */
+            height: 20px;
+            /* Icon size increase on hover */
+        }
+
+        /* Style for the link inside the button */
+        .action-button a {
+            color: rgb(255, 255, 255);
+            /* Link text color */
+            text-decoration: none;
+            /* Remove underline from links */
+        }
+
+        /* Ensure the button's link doesn’t affect button styles */
+        .action-button a:hover {
+            color: rgb(255, 255, 255);
+            /* Ensures hover color stays white for the link */
+        }
+
+
+        form {
+            width: 50vw;
+            max-width: 700px;
+            min-width: 200px;
+            margin-top: 20px;
+            /* Added margin-top to position it under the header */
+            padding: 1em 3em;
+            border: 2px solid #ccc;
+            border-radius: 15px;
+            background-color: rgba(240, 230, 248, 0.697);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+
+        form:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            /* Darker shadow on hover */
+        }
+
+        .form-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            align-items: center;
+            margin-bottom: 1.5em;
+            border-radius: 20px;
+        }
+
+        .view-group {
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #b5b0b6cd;
+            margin-right: 20px;
+
+        }
+
+        fieldset {
+            border: none;
+            padding: 1rem 0;
+            border-bottom: 1px solid #680e9c;
+        }
+
+        fieldset:last-of-type {
+            border-bottom: none;
+        }
+
+        label {
+            font-size: 1.1em;
+            margin: 0.5rem 0;
+            font-weight: 500;
+            /* Bolder labels for better visibility */
+        }
+
+        input {
+            margin: 4px 0 0 0;
+            width: 100%;
+            padding: 5px;
+            /* Add padding for better input height */
+            font-size: 1em;
+            /* Maintain consistency in font size */
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            /* Rounded edges for input fields */
+            transition: border-color 0.3s ease-in-out;
+            /* Smooth transition for border */
+        }
+
+        input:focus {
+            border-color: #6e2aec;
+            /* Change border color on focus */
+            outline: none;
+            /* Remove default outline for better UX */
+        }
+
+        input[type="checkbox"] {
+            justify-self: start;
+            width: auto;
+            margin: 0;
+            transform: scale(1.5);
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+
+        input[type="submit"] {
+            background-color: #742d91;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            border-radius: 50px;
+            text-align: center;
+            display: block;
+            width: 30px;
+            margin: 1em auto;
+            height: 3em;
+            /* Slightly taller button for better touch interaction */
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            min-width: 300px;
+
+        }
+
+        input[type="submit"]:hover {
+            background-color: #775b83;
+        }
+
+        .checkbox_container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* Two columns layout */
+            gap: 10px;
+            /* Space between buttons both horizontally and vertically */
+            text-align: center;
+        }
+
+        /* Hidden input container styling (initially hidden) */
+        .input-container {
+            display: none;
+            margin-bottom: 1.5em;
+        }
+
+        /* Adjust the form layout for mobile */
+        @media (max-width: 768px) {
+            .form-group {
+                grid-template-columns: 1fr;
+            }
+
+            form {
+                width: 90vw;
+                padding: 1.5em 2em;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+        }
+
+        input[type="button"] {
+            display: block;
+            width: 5px;
+            margin: 1em auto;
+            height: 2em;
+            /* Slightly taller button for better touch interaction */
+            font-size: 0.98rem;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #62518f, #6d5994);
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            min-width: 100px;
+            text-align: center;
+        }
+
+        input[type="submit"]:hover,
+        input[type="button"]:hover {
+            background: linear-gradient(135deg, #634fa0, #513f79);
+            /* Reverse gradient on hover */
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+            /* Larger shadow on hover */
+        }
+
+        input[type="submit"]:active,
+        input[type="button"]:active {
+            transform: translateY(2px);
+            /* Button press effect */
+        }
+
+        input[type="submit"]:focus,
+        input[type="button"]:focus {
+            outline: none;
+            /* Remove focus outline */
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+            /* Center items vertically */
+            margin-bottom: 20px;
+            /* Add space below the button */
+            position: absolute;
+            /* Allow positioning */
+            top: 20px;
+            /* Place near the top */
+            width: 100%;
+            /* Span the full width of the page */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        
+        <h1>📦 Stationery Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li> <div class="button-group">
+
+                    <div class="view-group" align="center">
+                        <div>
+                            <select name="vot_num" id="vot_num">
+                                <option value="ආයතන අංශය">ආයතන අංශය</option>
+                                <option value="ගිණුම් අංශය">ගිණුම් අංශය</option>
+                                <option value="ක්‍රීඩා අංශය">ක්‍රීඩා අංශය</option>
+                                <option value="සංවර්ධන අංශය">සංවර්ධන අංශය</option>
+                                <option value="ග්‍රාම සංවර්ධන අංශය"> ග්‍රාම සංවර්ධන අංශය</option>
+                                <option value="සංස්කෘතික අංශය">සංස්කෘතික අංශය</option>
+                            </select>
+                        </div>
+                        <button id="view-btn" class="action-button" title="View selected entries"
+                            onclick="viewSelectedSection()">
+                            View
+
+                        </button>
+
+                    </div>
+                
+                <li><a href="login.html">Admin Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <form method="post" action="form.php" id="myForm" onsubmit="return validateForm();">
+        <p>මාසික ලිපි ද්‍රව්‍ය </p>
+        <!-- Side-by-side section -->
+        <div class="form-group">
+            <div>
+                <label for="vot_num">අංශය:</label>
+                <select name="vot_num" id="vot_num">
+                    <option value="ආයතන අංශය">ආයතන අංශය</option>
+                    <option value="ගිණුම් අංශය">ගිණුම් අංශය</option>
+                    <option value="ක්‍රීඩා අංශය">ක්‍රීඩා අංශය</option>
+                    <option value="සංවර්ධන අංශය">සංවර්ධන අංශය</option>
+                    <option value="ග්‍රාම සංවර්ධන අංශය"> ග්‍රාම සංවර්ධන අංශය</option>
+                    <option value="සංස්කෘතික අංශය">සංස්කෘතික අංශය</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="date">දිනය:</label>
+                <input id="date" name="date" type="date" required aria-label="date" />
+            </div>
+
+
+
+            <fieldset>
+                <label for="employeenum">සේවක අංකය:</label>
+                <input id="employeenum" name="employeenum" type="text" onkeyup="fetchEmployeeDetails();" required
+                    aria-label="Employee number" />
+            </fieldset>
+
+            <fieldset>
+                <label for="name"> නම:</label>
+                <input id="name" name="name" type="text" aria-label="Name of the person receiving the funds" />
+            </fieldset>
+        </div>
+
+        <div class=" checkbox_container"></div>
+        <!-- Checkbox to toggle pen input visibility -->
+        <fieldset>
+            <label for="pen">Pens (පෑන්)</label>
+            <input type="checkbox" name="pen" id="pen" onclick="toggleInput()" aria-labelledby="pen-label" />
+
+
+            <!-- Container for the pen input fields (initially hidden) -->
+            <div id="penInputs" style="display: none;">
+                <label for="bluePen">Blue (නිල්):</label>
+                <input type="number" id="bluePen" oninput="updateTotal()" name="bluePen" min="0"><br><br>
+
+                <label for="blackPen">Black (කළු):</label>
+                <input type="number" id="blackPen" oninput="updateTotal()" name="blackPen" min="0"><br><br>
+
+                <label for="redPen">Red (රතු):</label>
+                <input type="number" id="redPen" name="redPen" oninput="updateTotal()" min="0"><br><br>
+
+        </fieldset>
+
+        <fieldset>
+            <label for="a4paperCheckbox">A4 papares List</label>
+            <input type="checkbox" name="a4paperCheckbox" id="a4paperCheckbox" onclick="toggleA4Input()" />
+            <!-- Container for the A4 paper input fields (initially hidden) -->
+            <div id="a4Inputs" style="display: none;">
+                <label for="a4paper">A4 - සුදු පැකට්:</label>
+                <input type="number" id="a4paper" name="a4paper" min="0"><br><br>
+
+                <label for="a4orange">A4 - තැඔිලි:</label>
+                <input type="number" id="a4orange" name="a4orange" min="0"><br><br>
+            </div>
+        </fieldset>
+
+
+
+        <!-- Checkbox to toggle file input visibility -->
+        <fieldset>
+            <label for="fileCheckbox">File (ෆයිල්)</label>
+            <input type="checkbox" name="fileCheckbox" id="fileCheckbox" onclick="toggleFileInput()" />
+
+            <!-- Container for the file input fields (initially hidden) -->
+            <div id="fileInputs" style="display: none;">
+                <label for="file1">Normal File :</label>
+                <input type="number" id="file1" name="file1" min="0"><br><br>
+
+                <label for="file2">මුද්‍රත File :</label>
+                <input type="number" id="file2" name="file2" min="0"><br><br>
+
+                <label for="fileTags">File Tags :</label>
+                <input type="number" id="fileTags" name="fileTags" min="0"><br><br>
+            </div>
+
+        </fieldset>
+
+
+        <!-- Checkbox to toggle cover input visibility -->
+        <fieldset>
+            <label for="coverCheckbox">Cover (ලිපි කවර)</label>
+            <input type="checkbox" name="coverCheckbox" id="coverCheckbox" onclick="toggleCoverInput()" />
+
+            <!-- Container for the cover input fields (initially hidden) -->
+            <div id="coverInputs" style="display: none;">
+                <label for="cover6x3">6*3:</label>
+                <input type="number" id="cover6x3" name="cover6x3" min="0"><br><br>
+
+                <label for="cover9x4">9*4:</label>
+                <input type="number" id="cover9x4" name="cover9x4" min="0"><br><br>
+
+                <label for="cover10x7">10*7:</label>
+                <input type="number" id="cover10x7" name="cover10x7" min="0"><br><br>
+
+                <label for="cover10x15">10*15:</label>
+                <input type="number" id="cover10x15" name="cover10x15" min="0"><br><br>
+            </div>
+        </fieldset>
+
+        <!-- Checkbox to toggle sticky pack input visibility -->
+        <fieldset>
+            <label for="stickyPackCheckbox">Sticky Pack</label>
+            <input type="checkbox" name="stickyPackCheckbox" id="stickyPackCheckbox"
+                onclick="toggleStickyPackInput()" />
+
+            <!-- Container for the sticky pack input fields (initially hidden) -->
+            <div id="stickyPackInputs" style="display: none;">
+                <label for="stickyPack">Sticky Pack (Pack):</label>
+                <input type="number" id="stickyPack" name="stickyPack" min="0"><br><br>
+
+                <label for="stickyPackSheets">තීරු Pack:</label>
+                <input type="number" id="stickyPackSheets" name="stickyPackSheets" min="0"><br><br>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <!-- Checkbox to toggle CR Books input visibility -->
+            <label for="crBooksCheckbox">CR Books</label>
+            <input type="checkbox" name="crBooksCheckbox" id="crBooksCheckbox" onclick="toggleCRBooksInput()" />
+            <!-- Container for the CR Books input fields (initially hidden) -->
+            <div id="crBooksInputs" style="display: none;">
+                <label for="crPaper40">40 (CR):</label>
+                <input type="number" id="crPaper40" name="crPaper40" min="0"><br><br>
+
+                <label for="crPaper80">80 (CR):</label>
+                <input type="number" id="crPaper80" name="crPaper80" min="0"><br><br>
+
+                <label for="crPaper120">120 (CR):</label>
+                <input type="number" id="crPaper120" name="crPaper120" min="0"><br><br>
+
+                <label for="crPaper160">160 (CR):</label>
+                <input type="number" id="crPaper160" name="crPaper160" min="0"><br><br>
+            </div>
+        </fieldset>
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <label for="tippex">Tipex (ටිපෙටක්ස්):</label>
+                <input type="number" id="tippex" name="tippex" min="0"><br><br>
+            </fieldset>
+
+            <fieldset>
+                <label for="cellotape">Cellotape (සෙලෝටේප්):</label>
+                <input type="number" id="cellotape" name="cellotape" min="0"><br><br>
+            </fieldset>
+
+            <fieldset>
+                <label for="pinsPack">Pins Pack (Pins Pack):</label>
+                <input type="number" id="pinsPack" name="pinsPack" min="0"><br><br>
+            </fieldset>
+
+            <fieldset>
+                <label for="fileClip">File Clip Pack (File Clip Pack):</label>
+                <input type="number" id="fileClip" name="fileClip" min="0"><br><br>
+            </fieldset>
+
+            <fieldset>
+                <label for="stapler">Stapler (Stapler - කටු):</label>
+                <input type="number" id="stapler" name="stapler" min="0"><br><br>
+            </fieldset>
+
+            <fieldset>
+                <label for="manilaPapers">Manila Papers (මානීලා පේපර්ස්):</label>
+                <input type="number" id="manilaPapers" name="manilaPapers" min="0"><br><br>
+            </fieldset>
+
+            <fieldset>
+                <label for="carbonPaper">Carbon Paper (කාබන් කොළ):</label>
+                <input type="number" id="carbonPaper" name="carbonPaper" min="0"><br><br>
+            </fieldset>
+
+            <fieldset>
+                <label for="halfSheet">Half-Sheet Bundles (හාෆ්ෂීට් බන්ඩ්ල්):</label>
+                <input type="number" id="halfSheet" name="halfSheet" min="0"><br><br>
+            </fieldset>
+
+            <fieldset>
+                <label for="highlighter">Highlighter (Highlight):</label>
+                <input type="number" id="highlighter" name="highlighter" min="0"><br><br>
+            </fieldset>
+
+            <fieldset>
+                <label for="pencils">Pencils (පැන්සල්):</label>
+                <input type="number" id="pencils" name="pencils" min="0"><br><br>
+            </fieldset>
+
+            <fieldset>
+                <label for="eraser">Eraser (මකන):</label>
+                <input type="number" id="eraser" name="eraser" min="0"><br><br>
+            </fieldset>
+
+            <fieldset>
+                <label for="notebook">Notebook (නෝට් බුක්):</label>
+                <input type="number" id="notebook" name="notebook" min="0"><br><br>
+            </fieldset>
+
+            <fieldset>
+                <label for="rulePaper">A4 Rule Paper (අඩි රූල්):</label>
+                <input type="number" id="rulePaper" name="rulePaper" min="0"><br><br>
+            </fieldset>
+
+            <fieldset>
+                <label for="legalPaper">Legal Paper (ලීගල් කොළ):</label>
+                <input type="number" id="legalPaper" name="legalPaper" min="0"><br><br>
+            </fieldset>
+
+            <fieldset>
+                <label for="glassBottles">Glue Bottles (ගම් බෝතල්):</label>
+                <input type="number" id="glueBottles" name="glueBottles" min="0"><br><br>
+            </fieldset>
+
+            <fieldset>
+                <label for="inkBottle">Ink Bottle (Ink bottle):</label>
+                <input type="number" id="inkBottle" name="inkBottle" min="0"><br><br>
+            </fieldset>
+        </div>
+        <input type="submit" value="Submit">
+
+        </div>
+    </form>
+
+</body>
+
+<script>
+
+    function toggleInput(inputId) {
+        var inputContainer = document.getElementById(inputId);
+        if (inputContainer.style.display === "none") {
+            inputContainer.style.display = "block";
+        } else {
+            inputContainer.style.display = "none";
+        }
+    }
+
+    function validateForm() {
+        var name = document.getElementById("name").value;
+        var employeenum = document.getElementById("employeenum").value;
+
+        if (employeenum === "") {
+            alert("Employee number must be filled out");
+            return false;
+        }
+
+        if (name === "") {
+            alert("Name must be filled out");
+            return false;
+        }
+
+        // Add further validation as required
+
+        return true;  // Form is valid, proceed with submission
+    }
+
+
+
+    // Function to toggle the visibility of the pen input fields
+    function toggleInput() {
+        var penInputs = document.getElementById('penInputs');
+        var checkbox = document.getElementById('pen');
+
+        if (checkbox.checked) {
+            penInputs.style.display = 'block'; // Show pen inputs when checked
+        } else {
+            penInputs.style.display = 'none';  // Hide pen inputs when unchecked
+        }
+    }
+
+    // Function to update the total when pen quantities change
+    function updateTotal() {
+        var bluePenQty = parseInt(document.getElementById('bluePen').value) || 0;
+        var blackPenQty = parseInt(document.getElementById('blackPen').value) || 0;
+        var redPenQty = parseInt(document.getElementById('redPen').value) || 0;
+
+        var totalPens = bluePenQty + blackPenQty + redPenQty;
+        console.log('Total Pens: ' + totalPens); // This can be displayed elsewhere in the page if needed
+    }
+
+    // Function to toggle the visibility of the A4 paper input fields
+    function toggleA4Input() {
+        var a4Inputs = document.getElementById('a4Inputs');
+        var checkbox = document.getElementById('a4paperCheckbox');
+
+        if (checkbox.checked) {
+            a4Inputs.style.display = 'block'; // Show A4 paper inputs when checked
+        } else {
+            a4Inputs.style.display = 'none';  // Hide A4 paper inputs when unchecked
+        }
+    }
+
+    function toggleFileInput() {
+        var fileInputs = document.getElementById('fileInputs');
+        var checkbox = document.getElementById('fileCheckbox');
+
+        if (checkbox.checked) {
+            fileInputs.style.display = 'block'; // Show file inputs when checked
+        } else {
+            fileInputs.style.display = 'none';  // Hide file inputs when unchecked
+        }
+    }
+
+    function toggleCoverInput() {
+        var coverInputs = document.getElementById('coverInputs');
+        var checkbox = document.getElementById('coverCheckbox');
+
+        if (checkbox.checked) {
+            coverInputs.style.display = 'block'; // Show cover inputs when checked
+        } else {
+            coverInputs.style.display = 'none';  // Hide cover inputs when unchecked
+        }
+    }
+    function toggleStickyPackInput() {
+        var stickyPackInputs = document.getElementById('stickyPackInputs');
+        var checkbox = document.getElementById('stickyPackCheckbox');
+
+        if (checkbox.checked) {
+            stickyPackInputs.style.display = 'block'; // Show sticky pack inputs when checked
+        } else {
+            stickyPackInputs.style.display = 'none';  // Hide sticky pack inputs when unchecked
+        }
+    }
+
+    function toggleCRBooksInput() {
+        var crBooksInputs = document.getElementById('crBooksInputs');
+        var checkbox = document.getElementById('crBooksCheckbox');
+
+        if (checkbox.checked) {
+            crBooksInputs.style.display = 'block'; // Show CR Books inputs when checked
+        } else {
+            crBooksInputs.style.display = 'none';  // Hide CR Books inputs when unchecked
+        }
+    }
+
+
+    function viewSelectedSection() {
+        const section = document.getElementById('vot_num').value; // Get selected section
+        if (section) {
+            const url = 'view.php?vot_num=' + encodeURIComponent(section); // Construct URL with selected section
+            window.location.href = url; // Redirect to the view.php page
+        } else {
+            alert('Please select a section to view.');
+        }
+    }
+
+</script>

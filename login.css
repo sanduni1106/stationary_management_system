@@ -1,0 +1,120 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Background gradient */
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg,  #ffffff ,#d69efd, #ffffff);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Center the login box */
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  /* Styling for the login box */
+  .login-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    backdrop-filter: blur(5px);
+  }
+  
+  /* Header text styling */
+  h2 {
+    color: rgba(148, 92, 148, 0.952);
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  /* Styling for input fields */
+  .input-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .input-group label {
+    color:  rgba(61, 12, 61, 0.842);
+    font-size: 14px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .input-group input:focus {
+    border: 2px solid #9b30ff;
+  }
+  
+  /* Forgot password link */
+  .forgot-password {
+    margin-bottom: 20px;
+  }
+  
+  .forgot-password a {
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+  }
+  
+  .forgot-password a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Submit button styling */
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(148, 92, 148);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #6a0dad;
+  }
+  
+  /* Signup link */
+  .signup {
+    margin-top: 20px;
+  }
+  
+  .signup p {
+    color: white;
+    font-size: 14px;
+  }
+  
+  .signup a {
+    color: #9b30ff;
+    text-decoration: none;
+  }
+  
+  .signup a:hover {
+    text-decoration: underline;
+  }
+  
