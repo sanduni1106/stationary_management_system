@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Login Form</title>
+  
+  
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Background gradient */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: url('assest/bg.jpg') center/cover no-repeat fixed;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Center the login box */
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    /* Styling for the login box */
+    .login-box {
+      position: relative;
+      /* For positioning the back arrow inside */
+      background-color: rgba(196, 180, 207, 0.473);
+      border-radius: 10px;
+      padding: 35px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 350px;
+      backdrop-filter: blur(5px);
+    }
+
+    /* Creative back arrow styling */
+    .back-arrow {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 24px;
+      color: #333;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .back-arrow::before {
+      content: '\2190';
+      /* Left arrow symbol */
+      font-size: 30px;
+      margin-right: 8px;
+      color: #000000;
+      transition: transform 0.3s ease;
+    }
+
+    .back-arrow:hover {
+      color: #000000;
+      transform: scale(1.1);
+    }
+
+    .back-arrow:hover::before {
+      transform: translateX(-5px);
+      
+    }
+
+    /* Header text styling */
+    h2 {
+      color: rgba(29, 24, 29, 0.952);
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    /* Styling for input fields */
+    .input-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .input-group label {
+      color: rgba(32, 26, 32, 0.842);
+      font-size: 14px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      margin-top: 5px;
+      background-color: rgba(255, 255, 255, 0.849);
+      color: rgb(29, 28, 28);
+      font-size: 16px;
+      outline: none;
+    }
+
+    .input-group input:focus {
+      border: 2px solid #9b30ff;
+    }
+
+    /* Submit button styling */
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: rgb(145, 90, 145);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #6a0dad;
+    }
+
+    /* Style the field container */
+    .field {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    /* Style for the Login button */
+    button[type="submit"] {
+      width: 48%;
+      padding: 12px;
+      background-color: #714d92;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #6a0dad;
+    }
+
+    /* Style for the Cancel button */
+    input[type="submit"].cancel {
+      width: 48%;
+      padding: 12px;
+      background-color: #e4e4e4;
+      color: #333;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"].cancel:hover {
+      background-color: #d1d1d1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <!-- Creative Back Arrow inside the login box -->
+      <a href="javascript:window.history.back();" class="back-arrow">
+      </a>
+
+      <h2>Login</h2>
+      <form id="login-form" onsubmit="return validateLogin(event)">
+        <!-- Branch Name dropdown -->
+        <div class="input-group">
+          <label for="branch">Branch Name</label>
+          <select id="branch" name="branch" required>
+            <option value="" disabled selected>Select a Branch</option>
+            <option value="establishment">Establishment</option>
+            <option value="account">Account</option>
+            <option value="sports">Sports</option>
+            <option value="development">Development</option>
+            <option value="rualdev">Rural Development</option>
+            <option value="culturalart">Cultural Art</option>
+            <option value="all">All</option>
+          </select>
+        </div>
+
+        <!-- Username input group -->
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+
+        <!-- Password input group -->
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+
+        <!-- Submit and Cancel buttons -->
+        <div class="field">
+          <button type="submit">Login</button>
+          <input type="submit" value="Cancel" class="cancel" onclick="cancelForm()">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Define correct credentials for each branch
+    const branches = {
+      "establishment": { username: "admin", password: "12345" },
+      "account": { username: "admin", password: "12345" },
+      "sports": { username: "admin", password: "12345" },
+      "development": { username: "admin", password: "12345" },
+      "rualdev": { username: "admin", password: "12345" },
+      "culturalart": { username: "admin", password: "12345" },
+      "all": { username: "admin", password: "12345" }
+    };
+
+    function validateLogin(event) {
+      event.preventDefault();  // Prevent form submission
+
+      // Get the values entered in the form
+      const branch = document.getElementById("branch").value; // Get selected branch from the dropdown
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      // Check if the branch exists and the credentials are correct
+      if (branches[branch] && branches[branch].username === username && branches[branch].password === password) {
+        // Redirect to the view page with the selected branch name as a URL parameter
+        window.location.href = `admin.php?branch=${branch}`;
+      } else {
+        // Show an alert if login fails
+        alert("Invalid branch name, username, or password.");
+      }
+    }
+
+    function cancelForm() {
+      document.getElementById("login-form").reset();  // Reset form fields
+    }
+  </script>
+  
+</body>
+
+</html>

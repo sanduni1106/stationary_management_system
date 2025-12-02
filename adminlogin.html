@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Login</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('assest/bg.jpg') center/cover no-repeat fixed;
+    font-family: 'Arial', sans-serif;
+  }
+
+  
+  .login-box {
+    background-color: rgba(196, 180, 207, 0.5);
+    border-radius: 12px;
+    padding: 40px;
+    width: 350px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6px);
+    text-align: center;
+  }
+
+  
+  .login-box h2 {
+    color: rgba(29, 24, 29, 0.952);
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+ 
+  .login-box input[type="text"],
+  .login-box input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    margin-bottom: 18px;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: rgb(29, 28, 28);
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+
+  .login-box input:focus {
+    border: 2px solid #9b30ff;
+    background-color: #fff;
+  }
+
+  .login-box button {
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(145, 90, 145);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .login-box button:hover {
+    background-color: #6a0dad;
+  }
+
+  
+  .error {
+    margin-top: 15px;
+    color: #b00020;
+    background-color: rgba(255, 255, 255, 0.322);
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  
+  @media (max-width: 400px) {
+    .login-box {
+      width: 90%;
+      padding: 25px;
+    }
+  }
+</style>
+
+</head>
+<body>
+<div class="login-box">
+    <h2>Admin Login</h2>
+    <form action="adminlogin.php" method="post">
+        <input type="text" name="username" placeholder="Enter Username" required>
+        <input type="password" name="password" placeholder="Enter Password" required>
+        <button type="submit">Login</button>
+    </form>
+    <?php if(isset($_GET['error'])): ?>
+        <p class="error"><?= htmlspecialchars($_GET['error']) ?></p>
+    <?php endif; ?>
+</div>
+</body>
+</html>
+
